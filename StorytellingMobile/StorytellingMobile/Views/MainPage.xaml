@@ -2,8 +2,74 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StorytellingMobile.UserControls;assembly=StorytellingMobile"
              x:Class="StorytellingMobile.Views.MainPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ContentView class="StorytellingMobile.UserControls.SavingThrowsLabel" x:Key="SavingThrowLabel"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        
+        <Grid Background="#484848">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <StackLayout Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Image/>
+                <StackLayout>
+                    <Label></Label>
+                    <Label></Label>
+                    <Label></Label>
+                    <Label></Label>
+                    <Label></Label>
+                    <Label></Label>
+                </StackLayout>
+            </StackLayout>
+            
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                   HorizontalTextAlignment="Center" FontSize="24" TextColor="Snow"
+                   Text="Спасброски" />
+            
+            <StackLayout Grid.Row="2" Grid.Column="0" Padding="8, 0">
+                <local:SavingThrowsLabel TitleThrow="Восприятие" ValueThrow="+12" />
+                <local:SavingThrowsLabel TitleThrow="Стойкость" ValueThrow="+9" />
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="8, 0">
+                <local:SavingThrowsLabel TitleThrow="Воля" ValueThrow="+10" />
+                <local:SavingThrowsLabel TitleThrow="Реакция" ValueThrow="+11" />
+            </StackLayout>
+            
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                   HorizontalTextAlignment="Center" FontSize="24" TextColor="Snow"
+                   Text="Характеристики" />
+            
+            <StackLayout Grid.Row="4" Grid.Column="0" Padding="8, 0">
+                <local:SavingThrowsLabel TitleThrow="Сила" ValueThrow="+3" />
+                <local:SavingThrowsLabel TitleThrow="Ловкость" ValueThrow="+1" />
+                <local:SavingThrowsLabel TitleThrow="Выносливость" ValueThrow="+2" />
+            </StackLayout>
+            
+            <StackLayout Grid.Row="4" Grid.Column="1" Padding="8, 0">
+                <local:SavingThrowsLabel TitleThrow="Интеллект" ValueThrow="-1" />
+                <local:SavingThrowsLabel TitleThrow="Мудрость" ValueThrow="+0" />
+                <local:SavingThrowsLabel TitleThrow="Харизма" ValueThrow="+2" />
+            </StackLayout>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
